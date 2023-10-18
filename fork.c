@@ -26,5 +26,7 @@ int process(char **args)
 		}
 		while (!WIFEXITED(progress) && !WIFSIGNALED(progress));
 	}
+	free(args);
+
 	return (-1);
 }

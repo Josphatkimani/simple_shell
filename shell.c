@@ -12,18 +12,18 @@ void shell(void)
 	int progress = -1;
 
 	while(1)
+{
+	if(progress == -1)
 	{
-		if(progress == -1)
-		{
-			printf("Kshell_$  ");
-			cmd = run_shell();
-			args = parse_shell(cmd);
-			progress = prog_execute(args);
-		}
-		else
-		{
-			exit(progress);
-		}
+		printf("Kshell_$  ");
+		cmd = run_shell();
+		args = parse_shell(cmd);
+		progress = prog_execute(args);
+	}
+	else
+	{
+		exit(progress);
+	}
 		free(cmd);
 		free(args);
 	}
