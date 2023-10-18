@@ -2,17 +2,17 @@
 /**
  * this gets the input then executes the command
  */
-void execshell(char **argv)
+int prog_execute(char **args)
 {
-    char *input = NULL;
+    char *cmd = NULL;
     char output;
 
-    if (argv)
+    if (args)
     {
         
-        input = argv[0];
+        cmd = args[0];
 
-	output = (execve(input, argv, NULL)); 
+	output = (execve(cmd, args, NULL));    
 
         if (output == -1)
 	{

@@ -1,0 +1,28 @@
+#include "shell.h"
+/**
+ * This is a programme that will split the string of array characters and
+ put them in slots
+ * This programme should return the string of array of characters
+ */
+
+char **parse_shell(char *cmd)
+{       
+        char *tokens[64];
+        int n = 0;
+        int i = 0;
+        
+        char *token = strtok(cmd, " \t\n\r\a\"");
+        
+        while (tokens != NULL){
+                tokens[n] = strdup(token);
+                token++;
+                token = strtok(NULL, " \t\n\r\a\"");
+        }       
+        
+        printf("tokens: \n");
+        for (i;i < n;i++){
+                printf("the token %d %s\n",i,tokens[i]);
+		free(tokens[i]);
+	}
+	return 0;
+}

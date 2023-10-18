@@ -2,14 +2,17 @@
 #define SHELL_H
 
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-
-int main(int ac, char **argv);
-ssize_t getline(char **lineptr, size_t * n,FILE * stream);
-char *strtok(char * str, const char * delim);
-void execshell(char **argv);
-
+#include <sys/wait.h>
+extern char **environ;
+void shell(void);
+void non_shell(void);
+char *run_shell(void);
+char **parse_shell(char *cmd);
+int prog_execute(char **args);
+int process(char **args);
+char *run_nonshell(void);
 
 #endif
