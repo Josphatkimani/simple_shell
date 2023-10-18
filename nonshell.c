@@ -20,7 +20,7 @@ void non_shell(void)
 			free(cmd);
 			free(args);
 		}
-		else(progress >=  0);
+		if(progress >=  0)
 		{
 			exit(progress);
 		}

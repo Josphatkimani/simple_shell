@@ -19,5 +19,6 @@ int prog_execute(char **args)
             perror("Error occured did not execute");
         }
     }
+    return 0;
 
 }
